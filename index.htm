@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME- Tech Server Plus</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <style>
+        /* Navbar setup */
+ 
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color: transparent;
+            border: none;
+            transition: background-color 0.5s ease;
+            padding: 20px 0;
+        }
+
+        .navbar-brand img {
+    height: 60px !important; /* Increase logo height */
+}
+
+
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        .navbar-nav li a {
+            font-size: 20px;
+            color: white !important;
+            transition: color 0.3s ease;
+              padding-top: 20px; /* Increase vertical padding */
+              padding-bottom: 20px;
+        }
+
+        .navbar-nav li a:hover {
+            color: rgba(109, 197, 51, 0.925) !important;
+        }
+
+        .navbar-toggle {
+            background-color: green !important;
+            border: none;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: white !important;
+        }
+
+        /* Carousel */
+        #myCustomCarousel {
+            position: relative;
+            max-width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .custom-carousel-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .custom-carousel-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .custom-carousel-item.active {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        .custom-carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            animation: zoomEffect 8s ease-in-out infinite;
+        }
+
+        @keyframes zoomEffect {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .custom-carousel-caption {
+            position: absolute;
+            top: 50%;
+            margin-left: 900px;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            max-width: 90%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            font-weight: 300;
+        }
+
+        .falling-heading span {
+            display: inline-block;
+            transform: translateY(-100px);
+            opacity: 0;
+            animation: fall 0.5s forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .custom-carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            padding: 20px;
+            cursor: pointer;
+            user-select: none;
+            background: rgba(67, 192, 9, 0.7);
+            border-radius: 70%;
+            z-index: 2;
+            transition: background 0.3s ease;
+        }
+
+        .custom-carousel-control:hover {
+            background: transparent;
+            border: 1px solid rgba(67, 192, 9, 0.7);
+        }
+
+        .custom-carousel-control.prev {
+            left: 10px;
+        }
+
+        .custom-carousel-control.next {
+            right: 10px;
+        }
+
+        /* Features Section */
+        #r1 {
+            background-color: #004586;
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .custom-column {
+            background-color: white;
+            border: 2px solid black;
+            width: 30%;
+            min-width: 250px;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: blue;
+        }
+
+        .custom-column h5 {
+            font-weight: 400;
+            font-size: x-large;
+            margin-top: 10px;
+        }
+
+        /* About Section */
+        #r2 {
+            background-color: white;
+            color: black;
+            padding: 50px 20px;
+        }
+
+        .section-header h3 {
+            color: #232323;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 32px;
+            text-transform: uppercase;
+        }
+
+        #r2 button {
+            background-color: rgba(43, 165, 43, 0.842);
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Call to Action Section */
+        #r3 {
+            position: relative;
+            background: url('./assests/newsletter-bg.jpg') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            padding: 100px 20px;
+            color: white;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #r3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 255, 0.5);
+            z-index: 1;
+        }
+
+        #r3 > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        #r3 h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        #r3 p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        #r3 button  {
+            background-color: rgba(46, 129, 46, 0.952);
+            color: white;
+            border: none;
+            padding: 15px 30px 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+          #r3 button a {
+                font-size: 16px;
+                padding: 12px 25px;
+                color: white;
+            }
+         #r3 button:hover {
+            background-color: rgba(67, 192, 9, 0.7);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+             .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color:rgb(0, 0, 0);
+            border: none;
+            transition: background-color 0.5s ease;
+            padding: 20px 0;
+        }
+               .custom-carousel-caption {
+            position: absolute;
+            top: 50%;
+            margin-left: 250px;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            max-width: 90%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: large;
+            font-weight: 300;
+        }
+          #myCustomCarousel {
+            position: relative;
+            max-width: 100%;
+            height: 300px;
+            overflow: hidden;
+            background: #000;
+        }
+            .navbar-nav li a {
+                font-size: 16px;
+            }
+
+            .custom-carousel-caption h2 {
+                font-size: 24px;
+            }
+
+            .custom-carousel-caption p {
+                font-size: 16px;
+            }
+
+            #r3 h3 {
+                font-size: 24px;
+            }
+
+            #r3 p {
+                font-size: 16px;
+            }
+
+            #r3 button a {
+                font-size: 16px;
+                padding: 12px 25px;
+                color: white;
+            }
+
+            #r2 .col-sm-6 {
+                width: 100%;
+                text-align: center;
+            }
+
+            #r2 img {
+                width: 80%;
+            }
+
+            #r1 {
+                flex-direction: column;
+                align-items: center;
+                
+            }
+
+            .custom-column {
+                width: 80%;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar {
+                padding: 20px 0;
+            }
+
+            .navbar-brand img {
+                height: 60px !important;
+            }
+
+            .navbar-nav li a {
+                font-size: 20px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .navbar-brand img {
+                height: 30px !important;
+            }
+        }
+        /* Features Section */
+#r1 {
+    min-height: 400px;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    gap: 20px;
+}
+
+.custom-column {
+    background-color: white;
+    border: 2px solid black;
+    width: 30%; /* Desktop width */
+    min-width: 250px;
+    height: 300px;
+    text-align: center;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.custom-column h5 {
+    font-weight: 400;
+    font-size: x-large;
+    margin-top: 10px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    #r1 {
+        flex-direction: column; /* Stack vertically */
+    }
+
+    .custom-column {
+        width: 80%; /* Full width on mobile */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><img src="assests/tech logo.png" alt="" style="height: 30px;"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.htm">HOME</a></li>
+                    <li><a href="about us .html">ABOUT US</a></li>
+                    <li><a href="product .html">PRODUCT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div id="myCustomCarousel">
+        <div class="custom-carousel-inner">
+            <div class="custom-carousel-item active">
+                <img src="./assests/slider-1.jpg" alt="Guy in Suit">
+                <div class="custom-carousel-caption">
+                    <h2 class="falling-heading">Welcome to Tech Server</h2>
+                    <p>Your trusted IT partner since 2003.</p>
+                </div>
+            </div>
+            <div class="custom-carousel-item">
+                <img src="./assests/slider-1.jpg" alt="Tech Slide 2">
+                <div class="custom-carousel-caption">
+                    <h2 class="falling-heading">Tech Server Plus</h2>
+                    <p>The company was founded in 2003. Currently, we are the national leader providing IT support services for network operators in the USA.</p>
+                </div>
+            </div>
+        </div>
+
+        <a class="custom-carousel-control prev" href="#">&#10094;</a>
+        <a class="custom-carousel-control next" href="#">&#10095;</a>
+    </div>
+
+    <!-- Features Section -->
+    <div class="rows" id="r1">
+        <div class="custom-column">
+            <img src="./assests/favicon2.png" alt="">
+            <h5>Quality Products</h5>
+        </div>
+        <div class="custom-column">
+            <img src="./assests/favicon.png" alt="">
+            <h5>30 Days Guarantee</h5>
+        </div>
+        <div class="custom-column">
+            <img src="./assests/favicon 3.png" alt="">
+            <h5>On-Time Support</h5>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="rows" id="r2" style="margin-top: 50px;">
+        <div class="col-sm-6" style="margin-bottom: 30px;">
+            <div class="section-header">
+                <h3>About <span style="color: rgb(91, 91, 136);">Tech Server Plus</span></h3><br>
+                <p style="color:rgba(77, 68, 68, 0.932); font-size: large; font-weight: 200; margin-top: 10px;">The company was founded in 2003. Currently,
+                     we are the national leader providing IT support services for network operators in the USA.</p>
+                <p style="color:rgba(77, 68, 68, 0.932); margin-top: 60px; font-size: small; font-weight: 200;">If you are looking to buy refurbished IT components or full systems (server, storage, tape library,
+                     or networking equipment) for low prices, with at least 1-year warranty and fast shipping, this is the right spot for you.</p>
+                <button><a href="about us .html" style="color: #000;">READ MORE</a></button>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <img src="assests/tech.png" alt="" style="max-width: 100%;">
+        </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="rows" id="r3">
+        <div class="col-sm-12">
+            <h3>ARE YOU LOOKING FOR QUALITY PRODUCTS?</h3>
+            <p>Get all the details and pricing by contacting us.</p>
+            <button ><a href="contact.html" >INQUIRE NOW</a></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; Tech Server Plus 2025. All rights reserved.</footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const carousel = document.getElementById('myCustomCarousel');
+            const items = carousel.querySelectorAll('.custom-carousel-item');
+            const prevButton = carousel.querySelector('.custom-carousel-control.prev');
+            const nextButton = carousel.querySelector('.custom-carousel-control.next');
+
+            let currentIndex = 0;
+
+            function showSlide(index) {
+                items.forEach((item, i) => {
+                    item.classList.remove('active');
+                });
+                items[index].classList.add('active');
+
+                const heading = items[index].querySelector('h2');
+                heading.classList.remove('falling-heading');
+                void heading.offsetWidth;
+                heading.classList.add('falling-heading');
+            }
+
+            prevButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                showSlide(currentIndex);
+            });
+
+            nextButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                currentIndex = (currentIndex + 1) % items.length;
+                showSlide(currentIndex);
+            });
+
+            setInterval(() => {
+                currentIndex = (currentIndex + 1) % items.length;
+                showSlide(currentIndex);
+            }, 7000);
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const headings = document.querySelectorAll('.falling-heading');
+
+            headings.forEach(heading => {
+                const text = heading.textContent;
+                heading.innerHTML = '';
+
+                text.split('').forEach((char, index) => {
+                    const span = document.createElement('span');
+                    span.textContent = char;
+                    span.style.animationDelay = `${index * 0.05}s`;
+                    heading.appendChild(span);
+                });
+            });
+        });
+
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

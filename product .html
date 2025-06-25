@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT- Tech Server Plus</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color: transparent;
+            border: none;
+            transition: background-color 0.5s ease;
+            padding: 20px 0;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        .navbar-nav li a {
+            font-size: 20px;
+            color: white !important;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav li a:hover {
+            color: rgba(109, 197, 51, 0.925) !important;
+        }
+
+        .navbar-toggle {
+            background-color: green !important;
+            border: none;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: white !important;
+        }
+
+        .navbar-brand img {
+            height: 60px !important;
+        }
+        .navbar {
+    padding: 20px 0; /* Increase top and bottom padding */
+}
+
+/* Bigger Logo */
+.navbar-brand img {
+    height: 60px !important; /* Increase logo height */
+}
+
+/* Bigger Nav Links */
+.navbar-nav li a {
+    font-size: 20px;  /* Increase text size */
+    padding-top: 20px; /* Increase vertical padding */
+    padding-bottom: 20px;
+}
+        /* Banner */
+        .page-banner {
+            background-image: url(./assests/blog-banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            padding: 100px 0;
+            z-index: 1;
+            text-align: center;
+        }
+            .page-banner .banner-content h3 {
+    color: #a2c543;
+    display: inline-block;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 1.28px;
+    line-height: 30px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.page-banner .banner-content ol{
+    background: transparent;
+    margin-left: 900px;
+     list-style: none;
+            display: inline-block;
+}
+        .page-banner .banner-content ol li {
+            display: inline;
+            margin-right: 5px;
+            color: white;
+        }
+
+        .page-banner .banner-content ol li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .page-banner .banner-content ol li.active {
+            color: #a2c543;
+        }
+        .page-banner h3 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        /* Section Header */
+        .section-header h3 {
+            color: #232323;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 32px;
+            letter-spacing: 1.28px;
+            margin: 40px 0 30px 0;
+            text-transform: uppercase;
+            border-left: 5px solid #004586;
+            padding-left: 15px;
+        }
+
+        .section-header span {
+            color: #004586;
+        }
+
+        /* Product Section */
+        .product-section {
+            padding: 50px 15px;
+        }
+
+        .type-post {
+            border: 1px solid #ddd;
+            padding: 15px;
+            background: #fff;
+            transition: transform 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .type-post:hover {
+            transform: translateY(-5px);
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container:hover .overlay {
+            opacity: 1;
+        }
+
+        .overlay i {
+            color: white;
+            font-size: 30px;
+            transform: translateY(-50px);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        .image-container:hover .overlay i {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .entry-title a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .entry-title a:hover {
+            color: #a2c543;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+        }
+
+        /* Responsive Fix */
+        @media (max-width: 768px) {
+              .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color:rgb(0, 0, 0);
+            border: none;
+            transition: background-color 0.5s ease;
+            padding: 20px 0;
+        }
+              .page-banner {
+    background-image: url(./assests/blog-banner.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 100px 0;
+    z-index: 1;
+    
+}
+
+               .page-banner .banner-content ol{
+    background: transparent;
+    margin-left: 200px;
+    }
+            .page-banner {
+                padding: 60px 0;
+            }
+
+            .section-header h3 {
+                text-align: center;
+                padding-left: 0;
+                border-left: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><img src="assests/tech logo.png" alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.htm">HOME</a></li>
+                    <li><a href="about us .html">ABOUT US</a></li>
+                    <li><a href="product .html">PRODUCT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="page-banner container-fluid">
+        <div class="container">
+            <div class="banner-content">
+                <h3>PRODUCT</h3>
+                <ol class="breadcrumb">
+                    <li><a href="index.htm">HOME</a></li>
+                    <li class="active">PRODUCT</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Section -->
+    <div class="container product-section">
+        <div class="section-header">
+            <h3>POWER<span> EDGE</span></h3>
+        </div>
+        <div class="row">
+
+            <!-- Product 1 to 6 -->
+            <!-- Repeat the structure for each product -->
+            <!-- I will only show product 1 structure below, the rest are the same -->
+
+            <!-- Example Product -->
+            <!-- Repeat this div for each product -->
+            <!-- Row 1 -->
+            <!-- You can paste your product 1 to 6 here like your original code -->
+
+            <!-- Example for one product -->
+            <!-- Product 1 -->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="type-post">
+                    <div class="entry-cover">
+                        <a href="contact.html">
+                            <div class="image-container">
+                                <img src="assests/product 1.jpg" alt="">
+                                <div class="overlay">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="entry-title">
+                            <a href="contact.html">Dell PowerEdge R430 19" 1U Server 4x 3,5" LFF 2x Intel XEON E5-2600 v3 / v4 DDR4 ECC PERC SAS SATA Raid 2x PSU</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+              <!-- Product 2 -->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="type-post">
+                    <div class="entry-cover">
+                        <a href="contact.html">
+                            <div class="image-container">
+                                <img src="assests/product 2.jpg" alt="">
+                                <div class="overlay">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="entry-title">
+                            <a href="contact.html">Dell PowerEdge R630 19" 1U Server 10x 2,5" SFF 4x NVMe 2x Intel XEON E5-2600 v3 v4 DDR4 ECC Raid 2x PSU</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="type-post">
+                    <div class="entry-cover">
+                        <a href="contact.html">
+                            <div class="image-container">
+                                <img src="assests/product 3.jpg" alt="">
+                                <div class="overlay">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="entry-title">
+                            <a href="contact.html">Dell PowerEdge R730xd 19" 2U 12x 3,5" LFF 2x Intel XEON E5-2600 v3 v4 PERC SAS SATA Raid 2x PSU -CTO-</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+                
+     
+
+        </div>
+        <div class="row">
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="type-post">
+                    <div class="entry-cover">
+                        <a href="contact.html">
+                            <div class="image-container">
+                                <img src="assests/product 4.jpg" alt="">
+                                <div class="overlay">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="entry-title">
+                            <a href="contact.html">Dell PowerEdge R420 19" 1U 4x 3,5" LFF 2x XEON E5-2400 v1 v2 DDR3 ECC Raid 2x PSU Server -CTO-</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+              <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="type-post">
+                    <div class="entry-cover">
+                        <a href="contact.html">
+                            <div class="image-container">
+                                <img src="assests/product 5.jpg" alt="">
+                                <div class="overlay">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="entry-title">
+                            <a href="contact.html">Dell PowerEdge R620 19" 1U Server 10x 2,5" SFF 2x Intel XEON E5-2600 v1 v2 PERC DDR3 ECC Raid 2x PSU - CTO-</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="type-post">
+                    <div class="entry-cover">
+                        <a href="contact.html">
+                            <div class="image-container">
+                                <img src="assests/product 6.jpg" alt="">
+                                <div class="overlay">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="entry-title">
+                            <a href="contact.html">Dell PowerEdge R620 19" 1U Server 8x 2,5" SFF 2x Intel XEON E5-2600 v1 v2 DDR3 ECC Raid 2x PSU 3xLP - CTO -</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Section -->
+        <div class="section-header">
+            <h3>STORAGE</h3>
+        </div>
+        <div class="row">
+ <div class="row">
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="type-post">
+                    <div class="entry-cover">
+                        <a href="contact.html">
+                            <div class="image-container">
+                                <img src="assests/product 7.jpg" alt="">
+                                <div class="overlay">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="entry-title">
+                            <a href="contact.html">HP 19" Storserv 8000 Storage Shelf Chassis 24x 2,5" SFF HDD SSD 2x JBOD 12G SAS Controller 4x SFF-8644 2x PSU (ZFS, Ceph, NAS, SAN, DAS)</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="type-post">
+                    <div class="entry-cover">
+                        <a href="contact.html">
+                            <div class="image-container">
+                                <img src="assests/product 8.jpg" alt="">
+                                <div class="overlay">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="entry-title">
+                            <a href="contact.html">HP 3Par 19" StorServ 8000 Storage 24x 3,5" LFF HDD SSD 2x JBOD 12G SAS Controller 4x SFF-8644 2x PSU (TrueNas ZFS, Ceph, NAS, SAN)</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12">
+                <div class="type-post">
+                    <div class="entry-cover">
+                        <a href="contact.html">
+                            <div class="image-container">
+                                <img src="assests/product 9.jpg" alt="">
+                                <div class="overlay">
+                                    <i class="fa fa-clipboard"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="blog-content">
+                        <h3 class="entry-title">
+                            <a href="contact.html">Dell PowerVault MD1400 SAS 12G DAS Storage Shelf Chassis 12x 3,5" LFF 2x JBOD SFF-8644 Controller 2x PSU 19" 2U</a>
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; Tech Server Plus 2025. All rights reserved.</footer>
+
+    <!-- Scroll Navbar Background -->
+    <script>
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

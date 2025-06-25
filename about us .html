@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT Us- Tech Server Plus</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+              .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color: transparent;
+            border: none;
+            transition: background-color 0.5s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(0, 0, 0, 0.9) !important;
+        }
+
+        .navbar-nav li a {
+            font-size: 18px;
+            color: white !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav li a:hover {
+            color: rgba(109, 197, 51, 0.925) !important;
+        }
+
+        .navbar-toggle {
+            background-color: green !important;
+            border: none;
+        }
+
+        .navbar-toggle .icon-bar {
+            background-color: white !important;
+        }
+        .page-banner {
+    background-image: url(./assests/blog-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 100px 0;
+    z-index: 1;
+}
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+ .page-banner {
+            background-image: url(./assests/blog-banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            padding: 100px 0;
+            z-index: 1;
+            text-align: center;
+        }
+            .page-banner .banner-content h3 {
+    color: #a2c543;
+    display: inline-block;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+    font-size: 32px;
+    letter-spacing: 1.28px;
+    line-height: 30px;
+    margin: 0;
+    text-transform: uppercase;
+}
+.page-banner .banner-content ol{
+    background: transparent;
+    margin-left: 900px;
+     list-style: none;
+            display: inline-block;
+}
+        .page-banner .banner-content ol li {
+            display: inline;
+            margin-right: 5px;
+            color: white;
+        }
+
+        .page-banner .banner-content ol li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .page-banner .banner-content ol li.active {
+            color: #a2c543;
+        }
+        .page-banner h3 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+   #r2 {
+            background-color: white;
+            color: black;
+            padding: 50px 20px;
+        }
+        /* Bigger Navbar */
+.navbar {
+    padding: 20px 0; /* Increase top and bottom padding */
+}
+
+/* Bigger Logo */
+.navbar-brand img {
+    height: 60px !important; /* Increase logo height */
+}
+
+/* Bigger Nav Links */
+.navbar-nav li a {
+    font-size: 20px;  /* Increase text size */
+    padding-top: 20px; /* Increase vertical padding */
+    padding-bottom: 20px;
+}
+ #r3 {
+            position: relative;
+            background: url('./assests/newsletter-bg.jpg') no-repeat center center;
+            background-size: cover;
+            text-align: center;
+            padding: 100px 20px;
+            color: white;
+            min-height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        #r3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 255, 0.5);
+            z-index: 1;
+        }
+
+        #r3 > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        #r3 h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        #r3 p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        #r3 button {
+            background-color: rgba(46, 129, 46, 0.952);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+         #r3 button a {
+                font-size: 16px;
+                padding: 12px 25px;
+                color: white;
+            }
+
+        #r3 button:hover {
+            background-color: rgba(67, 192, 9, 0.7);
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 16px;
+        }
+        @media(max-width: 768px){
+              .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 9999;
+            background-color:rgb(0, 0, 0);
+            border: none;
+            transition: background-color 0.5s ease;
+            padding: 20px 0;
+        }
+              .page-banner {
+    background-image: url(./assests/blog-banner.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 100px 0;
+    z-index: 1;
+}
+            .page-banner .banner-content ol{
+    background: transparent;
+    margin-left: 200px;
+    }
+    #h1{
+        margin-left: 200px;
+    }
+        }
+
+    </style>
+</head>
+<body>
+        <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mynavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand"><img src="assests/tech logo.png" alt="" style="height: 30px;"></a>
+            </div>
+            <div class="collapse navbar-collapse" id="mynavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.htm">HOME</a></li>
+                    <li><a href="about us .html">ABOUT US</a></li>
+                    <li><a href="product .html">PRODUCT</a></li>
+                    <li><a href="contact.html">CONTACT US</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="page-banner container-fluid">
+        <div class="container">
+            <div class="banner-content">
+                <h3 id="h1">ABOUT US</h3>
+                <ol class="breadcrumb" >
+                    <li ><a href="index.htm" title="home" style="color: white;">HOME</a></li>
+                    <li class="active" style="color: #a2c543;">ABOUT US</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+          <div class="rows" id="r2" style="margin-top: 50px;">
+        <div class="col-sm-6" style="margin-bottom: 30px;">
+            <div class="section-header">
+                <h3 style="font-size: xx-large;font-weight: 900; color: #2da029;font-family: 'Times New Roman', Times, serif;">About <span style="color: rgb(91, 91, 136);">Tech Server Plus</span></h3><br>
+                <p style="color:rgba(77, 68, 68, 0.932); font-size: large; font-weight: 200; margin-top: 10px;">The company was founded in 2003. Currently, we are the national leader providing IT support services for network operators in the USA.</p>
+                <p style="color:rgba(77, 68, 68, 0.932); margin-top: 60px; font-size: small; font-weight: 200;">If you are looking to buy refurbished IT components or full systems (server, storage, tape library, or networking equipment) for low prices, with at least 1-year warranty and fast shipping, this is the right spot for you.</p>
+                <p style="color:rgba(77, 68, 68, 0.932); margin-top: 60px; font-size: small; font-weight: 200;">We are not here to convince you to buy the newest technology. Your IT budget can be tight and replacing your 
+                    systems is a huge pain, but the OEMs make it hard to keep your older, but well-working hardware with support costs, End of Sale announcements, etc.
+                     We are here to help you keep your IT hardware infrastructure running as long as you would like to while keeping
+                      your costs low.</p>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <img src="assests/tech.png" alt="" style="max-width: 100%;">
+        </div>
+    </div>
+        <!-- Call to Action Section -->
+    <div class="rows" id="r3">
+        <div class="col-sm-12">
+            <h3>ARE YOU LOOKING FOR QUALITY PRODUCTS?</h3>
+            <p>Get all the details and pricing by contacting us.</p>
+            <button><a href="contact.html">INQUIRE NOW</a></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>&copy; Tech Server Plus 2025. All rights reserved.</footer>
+    <!---javascript-->
+    <script>
+    window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+
+</body>
+</html>
