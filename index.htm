@@ -10,8 +10,90 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Animate.css (for .bounce) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
     <style>
+         .responsive-heading {
+    font-size: 35px;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* allows wrapping on small screens */
+  }
+
+  .heading-icon {
+    height: 60px; /* default size */
+    width: auto;
+  }
+        h3 img{
+            padding: 10px;
+        }
+        .falling-heading{
+            font-size: 50px;
+            margin-left: 0px;
+        }
+        .custom-mouse-icon {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    z-index: 5;
+}
+.custom-mouse-icon {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    background-color: transparent;
+    color: rgb(207, 200, 200);
+     z-index: 5;
+    opacity: 0;
+    animation: mouse-bounce 2s ease-in-out infinite;
+}
+
+/* Reset animation on slide change */
+.custom-carousel-item.active .custom-mouse-icon {
+    animation: bounceIn 1s ease forwards, mouse-bounce 2s ease-in-out infinite;
+    opacity: 1;
+}
+
+/* Optional: smoother bounce keyframes */
+@keyframes mouse-bounce {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: translateX(-50%) translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+    }
+}
+
+        /*Mouse Bounce
+        .fa-computer-mouse {
+    font-size: 30px;
+    color: white;
+    display: block;
+    margin-top: 300px;
+}
+
         /* Navbar setup */
  
         .navbar {
@@ -191,7 +273,7 @@
 
         /* About Section */
         #r2 {
-            background-color: white;
+           /* background-color: white;*/
             color: black;
             padding: 50px 20px;
         }
@@ -286,6 +368,46 @@
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
+             .section-header h3 {
+            color: #232323;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 22px;
+            text-transform: uppercase;
+            margin-left: -20px !important;
+        }
+     .responsive-heading {
+  font-size: 22px;
+ font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: left;
+  gap: 5px;
+  flex-wrap: nowrap; /* prevent wrapping */
+  white-space: nowrap; /* force text and inline elements on same line */
+  overflow: hidden; /* optional: hide overflow */
+  text-overflow: ellipsis; /* optional: add ... if content is too long */
+  margin-right: 30px;
+}
+ .responsive-heading span {
+/*  font-size: xx-small;*/
+font-size: 22px;
+ font-family: 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: left;
+  gap: 5px;
+  flex-wrap: nowrap; /* prevent wrapping */
+  white-space: nowrap; /* force text and inline elements on same line */
+  overflow: hidden; /* optional: hide overflow */
+  text-overflow: ellipsis; /* optional: add ... if content is too long */
+  margin-right: 30px;
+  width: 800px !important;
+  z-index: 2;
+}
+.responsive-heading svg{
+    width: 20% !important;
+    height: 20% !important;
+    margin-left: 10px;
+}
+
              .navbar {
             position: fixed;
             top: 0;
@@ -418,6 +540,8 @@
 
 /* Mobile View */
 @media (max-width: 768px) {
+    
+  
     #r1 {
         flex-direction: column; /* Stack vertically */
     }
@@ -460,17 +584,35 @@
             <div class="custom-carousel-item active">
                 <img src="./assests/slider-1.jpg" alt="Guy in Suit">
                 <div class="custom-carousel-caption">
-                    <h2 class="falling-heading">Welcome to Tech Server</h2>
+                    <h2 class="falling-heading">Tech Server plus</h2>
                     <p>Your trusted IT partner since 2003.</p>
-                </div>
+                    </div>
+                <svg class="custom-mouse-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 50" width="24" height="40">
+  <rect x="8" y="2" width="16" height="36" rx="8" ry="8" fill="none" stroke="white" stroke-width="2" />
+  <line x1="16" y1="8" x2="16" y2="16" stroke="white" stroke-width="2" stroke-linecap="round" />
+</svg>
+
             </div>
+      
             <div class="custom-carousel-item">
                 <img src="./assests/slider-1.jpg" alt="Tech Slide 2">
                 <div class="custom-carousel-caption">
                     <h2 class="falling-heading">Tech Server Plus</h2>
                     <p>The company was founded in 2003. Currently, we are the national leader providing IT support services for network operators in the USA.</p>
                 </div>
+                 <div>
+                    <svg class="custom-mouse-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 50" width="24" height="40">
+  <rect x="8" y="2" width="16" height="36" rx="8" ry="8" fill="none" stroke="white" stroke-width="2" />
+  <line x1="16" y1="8" x2="16" y2="16" stroke="white" stroke-width="2" stroke-linecap="round" />
+</svg>
+
+              <!----  <i class="fa-regular fa-computer-mouse-scrollwheel custom-mouse-icon" 
+                     style=" font-size: 24px; margin-top: 550px;margin-right: 400px;"></i>-->
+      
+                </div>
             </div>
+     
+
         </div>
 
         <a class="custom-carousel-control prev" href="#">&#10094;</a>
@@ -495,17 +637,29 @@
 
     <!-- About Section -->
     <div class="rows" id="r2" style="margin-top: 50px;">
-        <div class="col-sm-6" style="margin-bottom: 30px;">
+        <div class="col-sm-7" style="margin-bottom: 30px;">
             <div class="section-header">
-                <h3>About <span style="color: rgb(91, 91, 136);">Tech Server Plus</span></h3><br>
+             <!-----   <h3>
+      <img src="path/to/your/icon.png" alt="icon">
+      <span>about Tech Server Plus</span>
+      <img src="assests/ill.png" alt="icon" class="heading-icon">
+    </h3>-->
+            <h3 class="responsive-heading" > <svg width="32" height="32" viewBox="0 0 64 64" 
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="10" y="12" width="20" height="4" fill="black" />
+  <rect x="20" y="24" width="30" height="4" fill="black" />
+  <rect x="14" y="36" width="25" height="4" fill="black" />
+  <rect x="5" y="48" width="18" height="4" fill="black" />
+</svg>
+  About <span style="color: rgb(91, 91, 136);">Tech Server Plus</span></h3><br>
                 <p style="color:rgba(77, 68, 68, 0.932); font-size: large; font-weight: 200; margin-top: 10px;">The company was founded in 2003. Currently,
                      we are the national leader providing IT support services for network operators in the USA.</p>
-                <p style="color:rgba(77, 68, 68, 0.932); margin-top: 60px; font-size: small; font-weight: 200;">If you are looking to buy refurbished IT components or full systems (server, storage, tape library,
+                <p style="color:rgba(77, 68, 68, 0.932); margin-top: 60px; font-size: large; font-weight: 200;">If you are looking to buy refurbished IT components or full systems (server, storage, tape library,
                      or networking equipment) for low prices, with at least 1-year warranty and fast shipping, this is the right spot for you.</p>
-                <button><a href="about us .html" style="color: #000;">READ MORE</a></button>
+                <button><a href="about us .html" style="color: #000; text-decoration: none;">READ MORE</a></button>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             <img src="assests/tech.png" alt="" style="max-width: 100%;">
         </div>
     </div>
@@ -515,7 +669,7 @@
         <div class="col-sm-12">
             <h3>ARE YOU LOOKING FOR QUALITY PRODUCTS?</h3>
             <p>Get all the details and pricing by contacting us.</p>
-            <button ><a href="contact.html" >INQUIRE NOW</a></button>
+            <button ><a href="contact.html" style="text-decoration: none;" >INQUIRE NOW</a></button>
         </div>
     </div>
 
@@ -586,6 +740,27 @@
                 navbar.classList.remove('scrolled');
             }
         });
+        function showSlide(index) {
+    items.forEach((item, i) => {
+        item.classList.remove('active');
+    });
+    items[index].classList.add('active');
+
+    // Reset heading animation
+    const heading = items[index].querySelector('h2');
+    heading.classList.remove('falling-heading');
+    void heading.offsetWidth;
+    heading.classList.add('falling-heading');
+
+    // Reset mouse icon animation
+    const mouseIcon = items[index].querySelector('.custom-mouse-icon');
+    if (mouseIcon) {
+        mouseIcon.style.animation = 'none';
+        mouseIcon.offsetHeight; // force reflow
+        mouseIcon.style.animation = 'bounceIn 1s ease forwards, mouse-bounce 2s ease-in-out infinite';
+    }
+}
+
     </script>
 
 </body>
