@@ -9,6 +9,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <style>
+        .section-h3{
+            font-size: 60px;
+            font-weight: 900; 
+            color: #2da029;
+            font-family: 'Times New Roman', Times, serif
+        }
               .navbar {
             position: fixed;
             top: 0;
@@ -64,7 +70,7 @@
             z-index: 1;
             text-align: center;
         }
-            .page-banner .banner-content h3 {
+            .page-banner .banner-content .banner-2 {
     color: #a2c543;
     display: inline-block;
     font-family: 'Ubuntu', sans-serif;
@@ -191,6 +197,15 @@
             font-size: 16px;
         }
         @media(max-width: 768px){
+            .section-h3{
+                text-align: center;
+                font-size: 30px;
+                flex-wrap: nowrap; /* prevent wrapping */
+  white-space: nowrap; /* force text and inline elements on same line */
+  overflow: hidden; /* optional: hide overflow */
+  text-overflow: ellipsis;
+
+            }
               .navbar {
             position: fixed;
             top: 0;
@@ -244,7 +259,7 @@
     <div class="page-banner container-fluid">
         <div class="container">
             <div class="banner-content">
-                <h3 id="h1">ABOUT US</h3>
+                <h3 class="banner-2">ABOUT US</h3>
                 <ol class="breadcrumb" >
                     <li ><a href="index.htm" title="home" style="color: white;">HOME</a></li>
                     <li class="active" style="color: #a2c543;">ABOUT US</li>
@@ -255,7 +270,7 @@
           <div class="rows" id="r2" style="margin-top: 50px;">
         <div class="col-sm-6" style="margin-bottom: 30px;">
             <div class="section-header">
-                <h3 style="font-size: 60px;font-weight: 900; color: #2da029;font-family: 'Times New Roman', Times, serif;">About <span style="color: rgb(91, 91, 136);">Tech Server Plus</span></h3><br>
+                <h3 class="section-h3">About <span style="color: rgb(91, 91, 136);">Tech Server Plus</span></h3><br>
                 <p style="color:rgba(77, 68, 68, 0.932); font-size: large; font-weight: 200; margin-top: 10px;">The company was founded in 2003. Currently, we are the national leader providing IT support services for network operators in the USA.</p>
                 <p style="color:rgba(77, 68, 68, 0.932); margin-top: 60px; font-size: large; font-weight: 200;">If you are looking to buy refurbished IT components or full systems (server, storage, tape library, or networking equipment) for low prices, with at least 1-year warranty and fast shipping, this is the right spot for you.</p>
                 <p style="color:rgba(77, 68, 68, 0.932); margin-top: 60px; font-size: large; font-weight: 200;">We are not here to convince you to buy the newest technology. Your IT budget can be tight and replacing your 
