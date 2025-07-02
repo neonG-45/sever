@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Optimization Suggestions</title>
+  <style>
+    /* Apply consistent box-sizing */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Force images to scale within their containers */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Ensure heading layout adapts well to small screens */
+    .responsive-heading {
+      font-size: 20px;
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      overflow-x: auto;
+      text-overflow: ellipsis;
+    }
+
+    /* Adjust icon sizes for mobile */
+    .heading-icon, .responsive-heading svg {
+      width: 24px;
+      height: auto;
+    }
+
+    /* Prevent text wrapping on heading span */
+    .responsive-heading span {
+      font-size: inherit;
+      white-space: nowrap;
+    }
+
+    /* Remove underline from links globally */
+    a {
+      text-decoration: none;
+    }
+
+    /* Ensure carousel images are fully responsive */
+    .custom-carousel-item img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+
+    /* Make sure carousel height adjusts for smaller screens */
+    @media (max-width: 768px) {
+      #myCustomCarousel {
+        height: 300px;
+      }
+
+      .custom-carousel-caption {
+        margin-left: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        max-width: 95%;
+        padding: 10px;
+      }
+
+      .custom-carousel-caption h2,
+      .custom-carousel-caption p {
+        font-size: 16px;
+        line-height: 1.3;
+      }
+
+      .navbar-nav li a {
+        font-size: 14px;
+        padding: 10px 0;
+      }
+
+      /* About image beside heading */
+      .section-header img.heading-icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h3 class="responsive-heading">
+    <svg class="heading-icon" viewBox="0 0 64 64">
+      <rect x="10" y="12" width="20" height="4" fill="black" />
+      <rect x="20" y="24" width="30" height="4" fill="black" />
+      <rect x="14" y="36" width="25" height="4" fill="black" />
+      <rect x="5" y="48" width="18" height="4" fill="black" />
+    </svg>
+    About <span style="color: rgb(91, 91, 136);">Tech Server Plus</span>
+  </h3>
+</body>
+
+</html>
